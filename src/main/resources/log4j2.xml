@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--status=off表示不输出log4j2本身的event信息。monitorInterval="3600"每隔一小时会扫描配置文件是否变更，自动重配-->
+<configuration status="off" monitorInterval="3600">
+    <!--定义一些常量-->
+    <properties>
+        <property name="LOG_PATH">${sys:catalina.home}/logs</property>
+        <property name="FILE_NAME">TLDemo</property>
+    </properties>
+    <!--定义输出目的地-->
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[TLDemo] %d{MM-dd HH:mm:ss.SSS} [%t] %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <!--定义输出日志等级-->
+            <!--<ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        </Console>
+        <RollingRandomAccessFile  name="RollingFile" fileName="${LOG_PATH}/${FILE_NAME}.log" filePattern="${LOG_PATH}/$${date:yyyy-MM}/${FILE_NAME}-%d{MM-dd-yyyy}-%i.log.gz" append="true">
+            <PatternLayout pattern="[TLDemo] %d{MM-dd HH:mm:ss.SSS} [%t] %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <Policies>
+                <!--定时压缩-->
+                <TimeBasedTriggeringPolicy />
+                <!--文件大小达到10M时压缩-->
+                <SizeBasedTriggeringPolicy size="10 MB" />
+            </Policies>
+            <!--最多保存1000份文件，大于1000自动删除-->
+            <DefaultRolloverStrategy max="1000" />
+        </RollingRandomAccessFile >
+    </appenders>
+    <loggers>
+        <!-- 3rdparty Loggers -->
+        <logger name="org.springframework" level="WARN"></logger>
+        <logger name="org.apache" level="WARN"></logger>
+
+        <!--<logger name="com.hafiz.www.controller" level="error" includeLocation="true" additivity="false">-->
+            <!--<appender-ref ref="ErrorLog"/>-->
+            <!--<appender-ref ref="Console"/>-->
+        <!--</logger>-->
+
+        <!--配置根Logger-->
+        <!--日志级别：ALL<TRACE<DEBUG<INFO<WARN<ERROR<FATAL<OFF-->
+        <!--设置根节点的日志输出级别，全配置文件以它为主-->
+        <root level="INFO" includeLocation="true">
+            <appender-ref ref="RollingFile"/>
+            <appender-ref ref="Console"/>
+        </root>
+    </loggers>
+</configuration>
