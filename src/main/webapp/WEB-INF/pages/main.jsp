@@ -16,7 +16,7 @@
 				$('body').layout();
 				//getAgentInfo();
 			})
-			
+
 			function InitLeftMenu() {
 				$('.easyui-accordion li a').click(function() {
 					var tabTitle = $(this).text();
@@ -26,7 +26,7 @@
 					//指纹
 					close();
 					ActiveXKiller("TLFPAPICtrl","fingerDiv");
-					
+
 					//摄像头
 					ActiveXKiller("MyPhoto","faceDiv");
 				}).hover(function() {
@@ -35,11 +35,11 @@
 					$(this).parent().removeClass("hover");
 				});
 			}
-			
+
 			function addContent(subtitle) {
 				$("div.tabs-header span.tabs-title").text(subtitle);
 			}
-			
+
 			function getAgentInfo(){
 				$.ajax({
 			   			type: "POST",
@@ -54,9 +54,9 @@
 			   			}
 				});
 			}
-			
+
 			function close(){
-				var tLFPAPICtrl = document.getElementById("TLFPAPICtrl");   
+				var tLFPAPICtrl = document.getElementById("TLFPAPICtrl");
 				var pluginobj = document.getElementById("pluginobj");
 				if(null != tLFPAPICtrl || null != pluginobj){
 					if (isIE()){
@@ -69,11 +69,11 @@
 			}
 		</script>
   </head>
-<body class="easyui-layout" id="main">   
+<body class="easyui-layout" id="main">
     <div style="display: none;">
     	<input type="hidden" id="agentInfo" name="agentInfo">
     </div>
-    <div data-options="region:'north'" style="height: 80px; background: #D2E0F2;" class="top-title-self">TrustLink Demo</div> 
+    <div data-options="region:'north'" style="height: 80px; background: #D2E0F2;" class="top-title-self"><spring:message code="system_name" /></div>
     <div data-options="region:'west',title:'<spring:message code="bar_title" />',split:true" style="width:300px;">
 		<div id="menu" class="easyui-accordion" data-options="fit:true">
 				<ul id="tt" class="easyui-tree" style="margin-top: 20px;margin-left: 15px;">
@@ -121,18 +121,18 @@
 					</li>
 				</ul>
 		</div>
-	</div>   
-    <div data-options="region:'center'" id="mainPanle">   
-    	<div id="content" class="easyui-layout" data-options="fit:true">   
+	</div>
+    <div data-options="region:'center'" id="mainPanle">
+    	<div id="content" class="easyui-layout" data-options="fit:true">
 		    <div id="tabs" class="easyui-tabs" data-options="fit:true">
 					<div id="right"  title="<spring:message code="content" />" data-options="closable:false" style="text-align: center;">
-						
+
 					</div>
 			</div>
-		</div> 
-    </div>  
+		</div>
+    </div>
     <div data-options="region:'south'" style="height:30px;background: #D2E0F2;"></div>
-</body> 
+</body>
 <script for="TLFPAPICtrl" event="GotFeatureEvent()" language="javascript">hasGotFeatureEvent();</script>
 <script for="CertCtl" event="OnGetIDCardInfo()" language="javascript">OnGetIDCardInfo();</script>
 </html>

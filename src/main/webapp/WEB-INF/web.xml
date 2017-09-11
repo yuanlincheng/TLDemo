@@ -11,6 +11,23 @@
     <param-value>TLDemo</param-value>
   </context-param>
 
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name></web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <http-method>PUT</http-method>
+            <http-method>DELETE</http-method>
+            <http-method>HEAD</http-method>
+            <http-method>OPTIONS</http-method>
+            <http-method>TRACE</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
+
     <!-- log4j2-begin -->
     <listener>
         <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
@@ -120,4 +137,9 @@
     <filter-name>DruidWebStatFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+
 </web-app>

@@ -59,6 +59,12 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <!-- 定义默认的异常处理页面，当该异常类型的注册时使用 -->
+        <property name="defaultErrorView" value="error"></property>
+        <!-- 定义异常处理页面用来获取异常信息的变量名，默认名为exception -->
+        <property name="exceptionAttribute" value="ex"></property>
+    </bean>
 
     <!--ViewResolver 视图解析器-->
     <!--用于支持Servlet、JSP视图解析-->

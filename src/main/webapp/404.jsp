@@ -82,8 +82,8 @@
 </head>
 <body>
 <div class="demo">
-    <p><span>E</span><span>R</span><span>R</span><span>O</span><span>R</span><span>!</span></p>
-    <p>非常抱歉：服务器内部错误！<a style="opacity: 1;" class="link" href="/czcqw" onclick="history.go(-1)">返回?</a></p>
+    <p><span>4</span><span>0</span><span>4</span></p>
+    <p>温馨提示：您访问的地址不存在！<a style="opacity: 1;" class="link" href="/czcqw" onclick="history.go(-1)">返回?</a></p>
 </div>
 </body>
 </html>
