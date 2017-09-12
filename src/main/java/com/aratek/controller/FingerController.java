@@ -59,7 +59,6 @@ public class FingerController{
      */
     @RequestMapping(value = "/login")
     public String login(Model model, Manager manager){
-        int n = 7 / 0;
         if (Optional.of(manager).isPresent()) {
             if (managerService.checkLogin(manager.getAccount(), manager.getPassword())) {
                 return "/main";

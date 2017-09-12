@@ -9,7 +9,6 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.reflect.misc.MethodUtil;
 
 /**
  * 文件名：
@@ -22,7 +21,7 @@ import sun.reflect.misc.MethodUtil;
 public class XmlUtil {
 
     //日志对象
-    private static final Logger logger = LoggerFactory.getLogger(MethodUtil.class);
+    private static final Logger logger = LoggerFactory.getLogger(XmlUtil.class);
     // 报文解析
     public static ResponseWsVO parseTasXml(String xmlResponse) throws InternalSystemException {
         ResponseWsVO crv = null;

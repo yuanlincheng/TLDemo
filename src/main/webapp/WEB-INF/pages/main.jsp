@@ -98,27 +98,27 @@
 							<li><a href="javascript:void(0)" onclick="loadPage('right','getSetting','');"><spring:message code="change_parameter" /></a></li>
 						</ul>
 					</li>
-					<li data-options="state:'closed'"><span><spring:message code="face_operate" /></span>
-						<ul>
-							<li><a href="javascript:void(0)" onclick="loadPage('right','load?name=enrollFace','');"><spring:message code="enroll_face" /></a></li>
-						</ul>
-					</li>
-					<li data-options="state:'closed'"><span><spring:message code="idcard_operate" /></span>
-						<ul>
-							<li><a href="javascript:void(0)" onclick="loadPage('right','load?name=enrollCard','');"><spring:message code="enroll_card" /></a></li>
-						</ul>
-					</li>
-					<li><span><spring:message code="sign_operate" /></span>
-						<ul>
-							<li><a href="javascript:void(0)" onclick="loadPage('right','load?name=enrollSign','');"><spring:message code="enroll_sign" /></a></li>
-						</ul>
-					</li>
-					<li data-options="state:'closed'"><span>其它操作</span>
-						<ul>
-							<li><a href="javascript:void(0)" onclick="loadPage('right','load?name=showFpData','');">获取指纹数据</a></li>
-							<li><a href="javascript:void(0)" onclick="loadPage('right','load?name=agentVerify','');">客户端比对</a></li>
-						</ul>
-					</li>
+					<%--<li data-options="state:'closed'"><span><spring:message code="face_operate" /></span>--%>
+						<%--<ul>--%>
+							<%--<li><a href="javascript:void(0)" onclick="loadPage('right','load?name=enrollFace','');"><spring:message code="enroll_face" /></a></li>--%>
+						<%--</ul>--%>
+					<%--</li>--%>
+					<%--<li data-options="state:'closed'"><span><spring:message code="idcard_operate" /></span>--%>
+						<%--<ul>--%>
+							<%--<li><a href="javascript:void(0)" onclick="loadPage('right','load?name=enrollCard','');"><spring:message code="enroll_card" /></a></li>--%>
+						<%--</ul>--%>
+					<%--</li>--%>
+					<%--<li><span><spring:message code="sign_operate" /></span>--%>
+						<%--<ul>--%>
+							<%--<li><a href="javascript:void(0)" onclick="loadPage('right','load?name=enrollSign','');"><spring:message code="enroll_sign" /></a></li>--%>
+						<%--</ul>--%>
+					<%--</li>--%>
+					<%--<li data-options="state:'closed'"><span>其它操作</span>--%>
+						<%--<ul>--%>
+							<%--<li><a href="javascript:void(0)" onclick="loadPage('right','load?name=showFpData','');">获取指纹数据</a></li>--%>
+							<%--<li><a href="javascript:void(0)" onclick="loadPage('right','load?name=agentVerify','');">客户端比对</a></li>--%>
+						<%--</ul>--%>
+					<%--</li>--%>
 				</ul>
 		</div>
 	</div>
