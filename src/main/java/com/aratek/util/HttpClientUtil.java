@@ -62,6 +62,7 @@ public class HttpClientUtil {
 
     //指纹报文认证
     public static String VerifyFinger(String fingerData) throws InternalSystemException{
+        logger.info("[SYS_LOG][{}][{}]","VerifyFinger",fingerData.length());
         Map<String, String> patameterMap = new HashMap<>();
         patameterMap.put("pszFingerData", fingerData);
         patameterMap.put("pszExtInfo", "");
@@ -153,7 +154,7 @@ public class HttpClientUtil {
         httpPost.setEntity(entity);
         try (CloseableHttpResponse response = httpclient.execute(httpPost)) {
             if (response.getStatusLine().getStatusCode() == 200) {
-                tasResponse = CommonStringUtil.subStringByRule(EntityUtils.toString(response.getEntity(),"UTF-8"), "<ppszRsp>", "</ppszRsp>").replaceAll("&lt;", "<");
+                tasResponse = CommonStringUtil.subStringByRule(EntityUtils.toString(response.getEntity(),"UTF-8"), "<ppszRsp>", "</ppszRsp>").replaceAll("&#xD;&#xA", "\r");
             }
             EntityUtils.consume(entity);
         }  catch (Exception e) {

@@ -27,6 +27,12 @@
                  obj.returnValue = false;
              }
          }
+
+         //頁面綁定Enter建
+         function login() {
+                 $("#loginForm").submit();
+                 obj.returnValue = false;
+         }
 		</script>
   </head>
 <body onkeydown="BindEnter(event)">
@@ -47,7 +53,7 @@
                 </form>
             </div>
             <div region="south" border="false" style="text-align:right;padding:5px 0;">
-                <a class="easyui-linkbutton" iconcls="icon-ok" href="javascript:void(0)" onclick="login()">登录</a>
+                <a class="easyui-linkbutton" iconcls="icon-ok" type="" href="javascript:void(0)" onclick="login()">登录</a>
             </div>
         </div>
     </div>

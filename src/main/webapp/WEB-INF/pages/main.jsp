@@ -95,7 +95,7 @@
 							</li>
 							<li><a href="javascript:void(0)" onclick="loadPage('right','load?name=query','');"><spring:message code="query_finger" /></a></li>
 							<li><a href="javascript:void(0)" onclick="loadPage('right','load?name=delete','');"><spring:message code="delete_finger" /></a></li>
-							<li><a href="javascript:void(0)" onclick="loadPage('right','getSetting','');"><spring:message code="change_parameter" /></a></li>
+							<%--<li><a href="javascript:void(0)" onclick="loadPage('right','getSetting','');"><spring:message code="change_parameter" /></a></li>--%>
 						</ul>
 					</li>
 					<%--<li data-options="state:'closed'"><span><spring:message code="face_operate" /></span>--%>
